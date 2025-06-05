@@ -103,126 +103,123 @@ CREATE TABLE Table_Name (
 );
 ```
 
-**Question 1**
---
--- Paste Question 1 here
+Question 1
 
-```sql
--- Paste your SQL code below for Question 1
-```
+Write a SQL query to modify the Student_details table by adding a new column Email of type VARCHAR(50) and updating the column MARKS to have a default value of 0.
 
-**Output:**
+ALTER TABLE Student_details ADD COLUMN Email VARCHAR(50); ALTER TABLE Student_details ADD COLUMN MARKS DEFAULT '0';
 
-![Output1](output.png)
+## Output:
+![image](https://github.com/user-attachments/assets/eccda2cc-71ec-4a1d-936c-5f0c60a7a733)
 
-**Question 2**
----
--- Paste Question 2 here
 
-```sql
--- Paste your SQL code below for Question 2
-```
+Question 2
 
-**Output:**
+Create a new table named contacts with the following specifications: contact_id as INTEGER and primary key. first_name as TEXT and not NULL. last_name as TEXT and not NULL. email as TEXT. phone as TEXT and not NULL with a check constraint to ensure the length of phone is at least 10 characters.
 
-![Output2](output.png)
+CREATE TABLE contacts ( contact_id INT PRIMARY KEY, first_name TEXT NOT NULL, last_name TEXT NOT NULL, email TEXT, phone TEXT NOT NULL, CHECK (LENGTH(phone)>=10) );
 
-**Question 3**
----
--- Paste Question 3 here
+## Output:
+![image](https://github.com/user-attachments/assets/f28966ff-bae6-4687-a445-d00c60675e88)
 
-```sql
--- Paste your SQL code below for Question 3
-```
 
-**Output:**
+Question 3
 
-![Output3](output.png)
+Insert all books from Out_of_print_books into Books
 
-**Question 4**
----
--- Paste Question 4 here
+Table attributes are ISBN, Title, Author, Publisher, YearPublished
 
-```sql
--- Paste your SQL code below for Question 4
-```
+INSERT INTO Books(ISBN, Title, Author, Publisher, YearPublished) SELECT ISBN, Title, Author, Publisher, YearPublished FROM Out_of_print_books;
 
-**Output:**
+## Output:
+![image](https://github.com/user-attachments/assets/c04509c8-39c6-4a68-927f-9509effc72d0)
 
-![Output4](output.png)
 
-**Question 5**
----
--- Paste Question 5 here
+Question 4
+Create a table named Departments with the following columns:
 
-```sql
--- Paste your SQL code below for Question 5
-```
+DepartmentID as INTEGER DepartmentName as TEXT
 
-**Output:**
+CREATE TABLE Departments( DepartmentID INTEGER, DepartmentName TEXT);
 
-![Output5](output.png)
+## Output:
+![image](https://github.com/user-attachments/assets/99f55c04-d8f3-49a8-ab0c-29d3900191b9)
 
-**Question 6**
----
--- Paste Question 6 here
 
-```sql
--- Paste your SQL code below for Question 6
-```
+Question 5
 
-**Output:**
+Write an SQL query to add two new columns, department_id and manager_id, to the table employee with datatype of INTEGER. The manager_id column should have a default value of NULL.
 
-![Output6](output.png)
+ALTER TABLE employee ADD COLUMN department_id INTEGER; ALTER TABLE employee ADD COLUMN manager_id INTEGER DEFAULT NULL;
 
-**Question 7**
----
--- Paste Question 7 here
+## Output:
+![image](https://github.com/user-attachments/assets/76979743-2bd7-4360-a2b9-6dc2f3abfe54)
 
-```sql
--- Paste your SQL code below for Question 7
-```
 
-**Output:**
+Question 6
+Insert all customers from Old_customers into Customers
 
-![Output7](output.png)
+Table attributes are CustomerID, Name, Address, Email
 
-**Question 8**
----
--- Paste Question 8 here
+INSERT INTO Customers(CustomerID, Name, Address, Email) SELECT CustomerID, Name, Address, Email FROM Old_customers;6
 
-```sql
--- Paste your SQL code below for Question 8
-```
+## Output:
+![image](https://github.com/user-attachments/assets/9cf20062-df49-42c7-b0fe-b411cfdfb05e)
 
-**Output:**
 
-![Output8](output.png)
+Question 7
+---Write a SQL query to Add a new column named "discount" with the data type DECIMAL(5,2) to the "customer" table.
 
-**Question 9**
----
--- Paste Question 9 here
+Sample table: customer
 
-```sql
--- Paste your SQL code below for Question 9
-```
+customer_id | cust_name | city | grade | salesman_id -------------+----------------+------------+-------+------------- 3002 | Nick Rimando | New York | 100 | 5001 3007 | Brad Davis | New York | 200 | 5001 3005 | Graham Zusi | California | 200 | 5002
 
-**Output:**
+ALTER TABLE customer ADD COLUMN discount DECIMAL(5,2);
 
-![Output9](output.png)
+## Output:
+![image](https://github.com/user-attachments/assets/0d1222d4-3e7f-4f4d-b71f-f57b3e78f03f)
 
-**Question 10**
----
--- Paste Question 10 here
 
-```sql
--- Paste your SQL code below for Question 10
-```
+Question 8
+Create a table named Members with the following columns:
 
-**Output:**
+MemberID as INTEGER MemberName as TEXT JoinDate as DATE
 
-![Output10](output.png)
+create table Members( MemberID INTEGER, MemberName TEXT, JoinDate DATE );
+
+## Output:
+![image](https://github.com/user-attachments/assets/06250af9-46a4-437f-acfb-618055ac8a65)
+
+
+Question 9
+Write a SQL query to add birth_date attribute as timestamp (datatype) in the table customer
+
+Sample table: customer
+
+customer_id | cust_name | city | grade | salesman_id -------------+----------------+------------+-------+------------- 3002 | Nick Rimando | New York | 100 | 5001 3007 | Brad Davis | New York | 200 | 5001 3005 | Graham Zusi | California | 200 | 5002
+
+alter table customer add column birth_date timestamp;
+
+## Output:
+![image](https://github.com/user-attachments/assets/5b83ac6e-6eef-42b8-b285-af87ff211d38)
+
+
+Question 10
+Insert the below data into the Student_details table, allowing the Subject and MARKS columns to take their default values.
+
+RollNo Name Gender
+
+204 Samuel Black M
+
+Note: The Subject and MARKS columns will use their default values.
+
+insert into Student_details(RollNo,Name,Gender) values(204,"Samuel Black","M");
+
+## Output:
+![image](https://github.com/user-attachments/assets/795d1abe-e335-464a-b7e8-e3d002e20c43)
+
 
 
 ## RESULT
 Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
+
